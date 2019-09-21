@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static './css/countdown.css' %}">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="{% url 'dashboard' %}"> <i class="fa fa-home"></i> Dashboard <span class="sr-only">(current)</span></a></li>
+        <li><a href="{% url 'account' %}"><i class="fa fa-user"></i> Account</a></li>
+        <li><a href="{% url 'makepayment' %}"><i class="fa fa-credit-card"></i> Make payments</a></li>
+        <li><a href="{% url 'teller:addteller' %}"><i class="fa fa-image"></i> Upload Teller</a></li>
+        <li><a href="{% url 'logout' %}"> <i class="fa fa-power-off"></i> Logout</a></li>
+      </ul>
+    </div>
+  </div> 
+</div>
+<div class="col-sm-9  col-md-offset-2 main">
+  <h1 class="page-header">Welcome, {{user.username}}</h1>
+    <h3>Your Personal Details</h3>
+    <div class="col-sm-9  col-md-offset-0">
+      <table class="table table-bordered">
+        <tr>
+          <th>First name</th>
+          <td>{{user.first_name}}</td>
+        </tr>
+        <tr>
+          <th>Last name</th>
+          <td>{{user.last_name}}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+          <th>Room number</th>
+          <td>{{user.room_number}}</td>
+        </tr>
+        <tr>
+          <th>Phone number</th>
+          <td>{{user.phone_number}}</td>
+        </tr>
+      </table>
+  </div>
+</div>
+<div class="col-sm-9  col-md-offset-2 main">
+  <!-- <section class="landing">
+    <div class="landing-inner">
+      <h3>Coming Soon</h3>
+      <div class="countdown"></div>
+    </div>
+  </section>
+
+</div>
+<section id="footer">
+  <div class="container text-center">
+      <p>Made by <i class="fa fa-heart-o"></i>Butterfly Inc</p>
+  </div>
+</section> -->
+{% endblock content %}
+      

@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{%static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<section id="nav-bar">
+    <style type="text/css">
+        body{
+            padding: 0;
+            background: #efefef;
+            margin: 0;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <h2><a href="{% url 'home' %}"><span  id="hostel_name"> <i class="fa fa-home"></i>Mowarid Hostel</span></a></h2> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {%if request.user.is_authenticated%}
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">HOME </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>          
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboard' %}">DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
+            </li>
+            </ul>
+        </div>
+        {% else %}
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">HOME </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>          
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">SIGN UP</a>
+            </li>
+            </ul>
+        </div>
+        {% endif %}
+    </nav> 
+</section>
+<section id="price">
+    <div class="container">
+        <h1>Gallery</h1>
+        <div class="container gallery-container">
+            
+            <div class="tz-gallery">
+        
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house2.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house2.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house2.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">  
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house2.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house2.jpg">
+                            </a>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house2.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house2.jpg">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house3.jpg">
+                            </a>
+                        </div>
+                    </div>
+                        
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house3.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house3.jpg">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house3.jpg">
+                            </a>
+                        </div>
+                    </div>
+                        
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house3.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <a class="lightbox" href="../../../static/house3.jpg">
+                            <img class="card-img-top" alt="Park" src="../../../static/house3.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+        
+        </div>
+    </div>
+</section>
+    
+</div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

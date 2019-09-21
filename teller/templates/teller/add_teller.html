@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mowarid Hostel | Dashboard</title>
+    <link rel="stylesheet" href="../../../static/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../../static/css/main2.css">
+</head>
+<body>
+<nav class="navbar bg-blue navbar-inverse navbar-fixed-top">
+<div class="container-fluid">
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'logout' %}"> <i class="fa fa-home"></i> Mowarid Hostel</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{% url 'dashboard' %}"><i class="fa fa-home"></i> Dashboard</a></li>
+              <li><a href="{% url 'account' %}"> <i class="fa fa-user"></i> Account</a></li>
+              <li><a href="{% url 'makepayment' %}"><i class="fa fa-credit-card"></i> Make payments</a></li>
+              <li><a href="{% url 'teller:addteller' %}"><i class="fa fa-image"></i> Upload Teller</a></li>
+              <li><a href="{% url 'logout' %}"><i class="fa fa-power-off"></i> Logout</a></li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="{% url 'dashboard' %}"> <i class="fa fa-home"></i> Dashboard<span class="sr-only">
+
+                <li><a href="{% url 'account' %}"><i class="fa fa-user"></i> Account<span class="sr-only">(current)</a></li>
+                <li><a href="{% url 'makepayment' %}"><i class="fa fa-credit-card"></i> Make payments</a></li>
+                <li class="active"><a href="{% url 'teller:addteller' %}"><i class="fa fa-image"></i> Upload Teller</a></li>
+                <li><a href="{% url 'logout' %}"> <i class="fa fa-power-off"></i> Logout</a></li>
+            </ul>
+        </div>
+    </div>        
+</div>
+<div class="col-sm-9  col-md-offset-2 main">
+    <h1 class="page-header">Welcome, {{user.username}}</h1>
+    <!-- <h3>Your Personal Details</h3> -->
+  <div class="col-sm-9  col-md-offset-0">
+      <style type="text/css">
+
+        .create-form {
+      
+            width: 100%;
+      
+            max-width: 100%;
+      
+            padding: 15px;
+      
+            margin: auto;
+      
+          }
+      
+      
+      
+          .submit-button{
+      
+            max-width: 200px;
+      
+          }
+          
+          </style>
+        
+        
+      
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-7 offset-lg-1">
+
+      {% if success_message %}
+
+      <h3 style="color:green; text-align: center;">{{success_message}}</h3>
+
+    {% endif %}
+      <form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+        <!-- title -->
+        <div class="form-group">
+
+          <label for="id_title">Title</label>
+
+          <input class="form-control" type="text" name="title" id="id_title" placeholder="{{ user.room_number }}" required autofocus>
+
+        </div>
+
+        <!-- Body -->
+
+        <div class="form-group">
+
+          <label for="id_body">Content</label>
+
+          <textarea class="form-control" rows="8" type="text" name="body" id="id_body" placeholder="Teller number" required></textarea>
+
+        </div>
+
+        <!-- Image -->
+
+        <div class="form-group">
+
+          <label for="id_image">Image</label>
+
+          <input  type="file" name="image" id="id_image" accept="image/*" required>
+
+        </div>
+
+        <!-- Submit btn -->
+
+        <button class="submit-button btn btn-lg btn-primary btn-block" type="submit">POST</button>
+
+      </form>	
+
+    </div>
+
+  </div>
+
+</div>
+        
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="../../../static/js/bootstrap.min.js"></script>
+</body>
+</html>

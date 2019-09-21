@@ -1,0 +1,457 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{%static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- <link rel="stylesheet" href="../static/css/main.css"> -->
+
+    <title>Welcome | Mowarid Hostel</title>
+  </head>
+  <body>
+
+
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <h2><a href="{% url 'home' %}"><span  id="hostel_name"> <i class="fa fa-home"></i>Mowarid Hostel</span></a></h2> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {%if request.user.is_authenticated%}
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">HOME </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>          
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboard' %}">DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">LOGOUT</a>
+            </li>
+            </ul>
+        </div>
+        {% else %}
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">HOME </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>          
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'gallery' %}">GALLERY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">SIGN UP</a>
+            </li>
+            </ul>
+        </div>
+        {% endif %}
+    </nav> 
+</section>
+<div id="slider">
+    <div id="headerSlider" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#headerSlider" data-slide-to="0" class="active"></li>
+            <li data-target="#headerSlider" data-slide-to="1"></li>
+            <li data-target="#headerSlider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="../static/house.jpg" class="d-block w-100" alt="First Slide">
+            <div class="carousel-caption">
+                <h3 id="h1">Hospitality &<br>..Convenience at its peak </h3>
+            </div>
+            </div>
+            <div class="carousel-item">
+            <div class="carousel-caption">
+                <h3>Bringing Hospitality to you</h3>
+            </div>
+            <img src="../static/house2.jpg" class="d-block w-100" alt="Second Slide">
+            </div>
+            <div class="carousel-item">
+            <div class="carousel-caption">
+                <h3>Come take a tour at our fortress</h3>
+            </div>
+            <img src="../static/house2.jpg" class="d-block w-100" alt="Third Slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#headerSlider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#headerSlider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+            <h2>About Us</h2>
+            <div class="about-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quos ipsa omnis veniam possearum numquam hic sit laborum quae laboriosam placeat sint aspernatur et suscipit accusamus quam assumenda, at dolore vel? Commodi, eaque quod dolorem quam fugit aperiam molesreprehenderit maiores, consequatur nobis non, aut illo facilis repellat officia vero adicta! Molestiae accusamus facere, ipsam neque officiis non.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis quis illo eligendi fugit magnam quos?Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur autem distinctio facere voluptatem labore, atque qui! Provident assumenda at cupiditate minus, ex earum quo vel veniam adipisci suscipit sequi fuga.
+            </div>
+            <!-- <button type="button" class="btn btn-primary">Read more>></button> -->
+            </div>
+            <div class="col-md-6" skills-bar>
+                    <p>Hospitality</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:100%;">100%</div>
+                    </div>
+                    <p>Maximum Security</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:100%;">100%</div>
+                    </div>
+                    <p>24/7 Water Supply</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:100%;">100%</div>
+                    </div>
+                    <p>Standby Generator</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:100%;">100%</div>
+                    </div>
+                    <p>Free Transport</p>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:70%;">70%</div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+<section id="services">
+<div class="container">
+    <h1>Our Services</h1>
+    <div class="row services">
+        <div class="col-md-3 text-center">
+            <div class="icon">
+                <i class="fa fa-home"></i>
+            </div>
+            <h3>Home Services</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dignissimos voluptatibus saepe voluptatum quibusdam minus.</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="icon">
+                <i class="fa fa-tablet"></i>
+            </div>
+            <h3>Home Management</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dignissimos voluptatibus saepe voluptatum quibusdam minus.</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="icon">
+                <i class="fa fa-line-chart"></i>
+        </div>
+            <h3>Home Management</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dignissimos voluptatibus saepe voluptatum quibusdam minus.</p>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="icon">
+                <i class="fa fa-bus"></i>
+        </div>
+            <h3>Free Transport</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dignissimos voluptatibus saepe voluptatum quibusdam minus.</p>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="credible">
+        <div class="container">
+        <h1>Our Credibility</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="single-price">
+                        <div class="price-content">
+                        <ul>
+                        <li><i class="fa fa-check-circle"></i> Well Furnished Room</li>
+                        <li><i class="fa fa-check-circle"></i> Adequate water supply</li>
+                        <li><i class="fa fa-check-circle"></i> Stable Electricity</li>
+                        <li><i class="fa fa-check-circle"></i> Mikano Generator</li>
+                        <li><i class="fa fa-check-circle"></i> Free Transport System</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="single-price">
+                        <div class="price-content">
+                        <ul>
+                        <li><i class="fa fa-check-circle"></i> Well Furnished Room</li>
+                        <li><i class="fa fa-check-circle"></i> Adequate water supply</li>
+                        <li><i class="fa fa-check-circle"></i> Stable Electricity</li>
+                        <li><i class="fa fa-check-circle"></i> Mikano Generator</li>
+                        <li><i class="fa fa-check-circle"></i> Free Transport System</li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+<section id="price">
+    <div class="container">
+        <h1>Gallery</h1>
+            <div class="container gallery-container">
+                <div class="tz-gallery">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a class="lightbox" href="../static/house.jpg">
+                                <img class="card-img-top" alt="Park" src="../static/house.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a class="lightbox" href="../static/house2.jpg">
+                                <img class="card-img-top" alt="Park" src="../static/house2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a class="lightbox" href="../static/house3.jpg">
+                                <img class="card-img-top" alt="Park" src="../static/house2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">  
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a class="lightbox" href="../static/house2.jpg">
+                                <img class="card-img-top" alt="Park" src="../static/house2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a class="lightbox" href="../static/house2.jpg">
+                                <img class="card-img-top" alt="Park" src="../static/house.jpg">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card">
+                                <a class="lightbox" href="../static/house3.jpg">
+                                <img class="card-img-top" alt="Park" src="../static/house2.jpg">
+                                </a>
+                            </div>
+                        </div>
+                            
+                    </div>
+            
+                    <a href="{% url 'gallery' %}"><button type="button" class="btn btn-primary" id="button">View more>></button></a>
+                </div>
+            
+            </div>
+            
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section id="team">
+    <div class="container">
+        <h1>Our Team</h1>
+        <div class="row">
+        <div class="col-md-3 profile-pic text-center">
+        <div class="img-box">
+        <img src="../static/staff-1.jpg" alt="" class="img-responsive">
+        <ul>
+        <a href="#"> <li><i class="fa fa-facebook"></i></li></a>
+        <a href="#"> <li><i class="fa fa-twitter"></i></li></a>
+        <a href="#"> <li><i class="fa fa-linkedin"></i></li></a>
+        </ul>
+        </div>
+        <h2>Shopeyin Damilola</h2>
+        <h3>Founder / CEO</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, quia.</p>
+        </div>
+        <div class="col-md-3 profile-pic text-center">
+        <div class="img-box">
+        <img src="../static/staff-2.jpg" alt="" class="img-responsive">
+        <ul>
+        <a href="#"> <li><i class="fa fa-facebook"></i></li></a>
+        <a href="#"> <li><i class="fa fa-twitter"></i></li></a>
+        <a href="#"> <li><i class="fa fa-linkedin"></i></li></a>
+        </ul>
+        </div>
+        <h2>Shopeyin Olawale</h2>
+        <h3>Founder / CEO</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, quia.</p>
+        </div>
+        <div class="col-md-3 profile-pic text-center">
+        <div class="img-box">
+        <img src="../static/person_2.jpg" alt="" class="img-responsive">
+        <ul>
+        <a href="#"> <li><i class="fa fa-facebook"></i></li></a>
+        <a href="#"> <li><i class="fa fa-twitter"></i></li></a>
+        <a href="#"> <li><i class="fa fa-linkedin"></i></li></a>
+        </ul>
+        </div>
+        <h2>Shopeyin Oladimeji</h2>
+        <h3>Founder / CEO</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, quia.</p>
+        </div>
+        <div class="col-md-3 profile-pic text-center">
+        <div class="img-box">
+        <img src="../static/person_3.jpg" alt="" class="img-responsive">
+        <ul>
+        <a href="#"> <li><i class="fa fa-facebook"></i></li></a>
+        <a href="#"> <li><i class="fa fa-twitter"></i></li></a>
+        <a href="#"> <li><i class="fa fa-linkedin"></i></li></a>
+        </ul>
+        </div>
+        <h2>Shopeyin Michael</h2>
+        <h3>Founder / CEO</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, quia.</p>
+        </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials">
+        <div class="container">
+        <h1>Testimonials</h1>
+        <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia, voluptatibus?</p>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="profile">
+                <img src="../static/person_2.jpg" class="user">
+                <p> <i class="fa fa-quote-left"></i> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit ut officiis recusandae quos quibusdam dignissimos?<i class="fa fa-quote-right"></i></p>
+                    <h3>Temilola Olakunbi <span>Lecturer</span></h3>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="profile">
+                <img src="../static/person_2.jpg" class="user">
+                <p> <i class="fa fa-quote-left"></i> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit ut officiis recusandae quos quibusdam dignissimos? <i class="fa fa-quote-right"></i> </p> 
+                    <h3>Jeleel Tola <span>Occupant</span></h3>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="profile">
+                <img src="./static/person_2.jpg" class="user">
+                <p> <i class="fa fa-quote-left"></i> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit ut officiis recusandae quos quibusdam dignissimos? <i class="fa fa-quote-right"></i> </p>
+                    <h3>Shopeyin Olawale <span>Student</span></h3>
+                </div>
+            </div>
+        </div>
+        </div>
+        </section>
+  
+
+<section id="contact">
+    <div class="container">
+        <h1>Get in Touch</h1>
+        <div class="row">
+        <div class="col-md-6">
+        <form class="contact-form">
+        <div class="form-group">
+        <input type="text" class="form-control" placeholder="Your Name">
+        </div>
+        <div class="form-group">
+        <input type="number" class="form-control" placeholder="Phone number">
+        </div>
+        <div class="form-group">
+        <input type="email" class="form-control" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+        <textarea class="form-control" placeholder="Your Message" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+        </form>
+        </div>
+        <div class="col-md-6">
+            <div class="follow"> <b> Address:</b> <i class="fa fa-map-marker"></i> University of Ilorin Gate, Along ASUU Luxury Estate, Unilorin Permanent Site Rd, Tanke Ilorin</div>
+            <div class="follow"> <b> Phone:</b><i class="fa fa-phone"></i> +2349065611718 | +2349016427241</div>
+            <div class="follow"> <b> Email:</b> <i class="fa fa-envelope-o"></i>mowaridhostel@gmail.com</div>
+            <div class="follow"> <label><b>Get Social:</b> </label>
+                <a href=""> <i class="fa fa-facebook"></i></a>
+                <a href="#"> <i class="fa fa-twitter"></i></a>
+                <a href="#"> <i class="fa fa-youtube-play"></i></a>
+                <a href="#"> <i class="fa fa-google-plus"></i></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<section id="footer">
+    <div class="container text-center">
+        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="fa fa-home" aria-hidden="true"></i><a href="{% url 'home' %}">Mowarid Hostel</p>
+            <p>Made by <i class="fa fa-heart-o"></i>Butterfly Inc</p>
+    </div>
+</section>
+                
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.tz-gallery');
+</script>    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+    <script src="{% static 'js/scrollax.min.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
